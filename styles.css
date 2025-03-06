@@ -1,0 +1,46 @@
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/card.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width: 428px;
+  --color-cherry: rgb(185, 0, 0);
+  --background-colcor: gray;
+  --text-color: black;
+}
+
+body {
+  max-width: var(--max-width);
+  margin: auto;
+  min-height: 100vh;
+  border: 1px;
+  border-color: var(--text-color);
+  border-style: solid;
+}
+
+.main-header,
+.main-footer {
+  max-width: var(--max-width);
+  position: fixed;
+  width: 100%;
+  min-height: 8vh;
+  text-align: center;
+  background-color: var(--color-cherry);
+  z-index: 2;
+}
+
+.--home {
+  background-color: var(--background-colcor);
+}
+.--bookmark {
+  background-color: var(--background-colcor);
+}
+.--profile {
+  background-color: var(--background-colcor);
+}
