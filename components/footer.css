@@ -1,0 +1,16 @@
+.main-footer {
+  bottom: 0;
+}
+
+.footer-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center; /** Y-axis align **/
+  justify-content: space-evenly; /** X-axis align **/
+}
+
+.footer-link {
+  color: black;
+}
