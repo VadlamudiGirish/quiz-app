@@ -11,6 +11,8 @@
 :root {
   --max-width: 428px;
   --color-cherry: rgb(185, 0, 0);
+  --background-colcor: gray;
+  --text-color: black;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
   margin: auto;
   min-height: 100vh;
   border: 1px;
-  border-color: black;
+  border-color: var(--text-color);
   border-style: solid;
 }
 
@@ -34,11 +36,11 @@ body {
 }
 
 .--home {
-  background-color: gray;
+  background-color: var(--background-colcor);
 }
 .--bookmark {
-  background-color: gray;
+  background-color: var(--background-colcor);
 }
 .--profile {
-  background-color: gray;
+  background-color: var(--background-colcor);
 }

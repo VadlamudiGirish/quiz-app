@@ -12,5 +12,5 @@
 }
 
 .footer-link {
-  color: black;
+  color: var(--text-color);
 }
