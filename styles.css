@@ -5,6 +5,7 @@
 }
 :root {
   --max-width: 428px;
+  --color-cherry: rgb(185, 0, 0);
 }
 
 body {
@@ -15,14 +16,21 @@ body {
   border-color: black;
   border-style: solid;
 }
+.header {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 350%;
+}
 
 .main-header,
 .main-footer {
   max-width: var(--max-width);
   position: fixed;
   width: 100%;
+  min-height: 8vh;
   text-align: center;
-  border: 1px solid black;
+  background-color: var(--color-cherry);
+  z-index: 2;
 }
 
 .main-header {
@@ -34,53 +42,84 @@ body {
 }
 
 .footer-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center; /** Y-axis align **/
+  justify-content: space-evenly; /** X-axis align **/
 }
 .footer-link {
   color: black;
 }
+
 .--home {
   background-color: gray;
 }
-.card-section {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-direction: column;
+.--bookmark {
+  background-color: gray;
 }
-article {
-  border: 1px;
-  border-color: black;
-  border-style: solid;
-}
-.card-section {
-  margin-top: 20px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: var(--gap);
-  flex-direction: column;
+.--profile {
+  background-color: gray;
 }
 
-/* Product Card + Backgrounds */
+.card-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  width: 100%;
+  gap: 2vh;
+}
 
 .quiz-card {
-  padding: 10px;
-  margin: 20px;
-  width: 70%;
+  position: relative;
+  width: 90%;
+  height: 150px;
   font-size: 1.5rem;
-  box-shadow: 0px 0px 10px 0px var(--inky-black);
+  box-shadow: 3px 4px 1px 1px var(--color-cherry);
+  border: 1px;
+  border-color: var(--color-cherry);
+  border-style: solid;
+  border-radius: 25px;
 }
-
-.card-title {
-  text-decoration: none;
-  color: black;
-  background-color: var(--inky-black);
+.quiz-card-bookmark {
+  position: absolute;
+  top: -15px;
+  left: 330px;
+  z-index: -1;
 }
-
-.card-title:hover {
-  color: var(--inky-black);
-  background-color: var(--eggshell-white);
+.card-elements {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vw;
+}
+.card-tags {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.card-tag {
+  font-size: 1.15vw;
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 0.25px;
+  border-color: black;
+  border-style: dotted;
+}
+.card-question {
+  font-size: large;
+  font-style: italic;
+  color: red;
+}
+.card-button {
+  border-radius: 25%;
+  width: 6rem;
+  height: 2rem;
 }

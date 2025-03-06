@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="./public/favicon.ico" type="image/x-icon" />
-    <title>My Quiz app</title>
+    <title>Quiz-app</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -16,6 +16,34 @@
     </header>
     <main class="main-content">
       <section class="card-section">
+        <article class="quiz-card">
+          <svg
+            class="quiz-card-bookmark"
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-bookmark"
+          >
+            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
+            <path d="m9 10 2 2 4-4" />
+          </svg>
+          <div class="card-elements">
+            <div class="card-question">What does HTML stand for?</div>
+            <button class="card-button">Show Answer</button>
+            <div hidden class="card-answer">Hyper Text Markup Language</div>
+            <div class="card-tags">
+              <div class="card-tag">#html</div>
+              <div class="card-tag">#css</div>
+              <div class="card-tag">#javascript</div>
+            </div>
+          </div>
+        </article>
         <article class="quiz-card">
           <svg
             class="quiz-card-bookmark"
@@ -60,93 +88,6 @@
             stroke-linejoin="round"
             class="lucide lucide-bookmark"
           >
-            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-          </svg>
-          <div class="card-elements">
-            <div class="card-question">
-              Which HTML tag is used to link an external CSS file?
-            </div>
-            <button class="card-button">Show Answer</button>
-            <div hidden class="card-answer">link</div>
-            <div class="card-tags">
-              <div class="card-tag">#html</div>
-              <div class="card-tag">#css</div>
-              <div class="card-tag">#javascript</div>
-            </div>
-          </div>
-        </article>
-        <article class="quiz-card">
-          <svg
-            class="quiz-card-bookmark"
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-bookmark"
-          >
-            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-          </svg>
-          <div class="card-elements">
-            <div class="card-question">
-              What will console.log(2 + "2") output in JavaScript?
-            </div>
-            <button class="card-button">Show Answer</button>
-            <div hidden class="card-answer">"22"</div>
-            <div class="card-tags">
-              <div class="card-tag">#html</div>
-              <div class="card-tag">#css</div>
-              <div class="card-tag">#javascript</div>
-            </div>
-          </div>
-        </article>
-        <article class="quiz-card">
-          <svg
-            class="quiz-card-bookmark"
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-bookmark"
-          >
-            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-          </svg>
-          <div class="card-elements">
-            <div class="card-question">
-              Which CSS property is used to make text bold?
-            </div>
-            <button class="card-button">Show Answer</button>
-            <div hidden class="card-answer">font-weight</div>
-            <div class="card-tags">
-              <div class="card-tag">#html</div>
-              <div class="card-tag">#css</div>
-              <div class="card-tag">#javascript</div>
-            </div>
-          </div>
-        </article>
-        <article class="quiz-card">
-          <svg
-            class="quiz-card-bookmark"
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-bookmark"
-          >
             <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
             <path d="m9 10 2 2 4-4" />
           </svg>
@@ -163,39 +104,11 @@
             </div>
           </div>
         </article>
-        <article class="quiz-card">
-          <svg
-            class="quiz-card-bookmark"
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-bookmark"
-          >
-            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
-            <path d="m9 10 2 2 4-4" />
-          </svg>
-          <div class="card-elements">
-            <div class="card-question">What does HTML stand for?</div>
-            <button class="card-button">Show Answer</button>
-            <div hidden class="card-answer">Hyper Text Markup Language</div>
-            <div class="card-tags">
-              <div class="card-tag">#html</div>
-              <div class="card-tag">#css</div>
-              <div class="card-tag">#javascript</div>
-            </div>
-          </div>
-        </article>
       </section>
     </main>
     <footer class="main-footer">
       <nav class="footer-nav">
-        <a class="footer-link --home" href="./index.html">
+        <a class="footer-link --bookmark-home" href="./index.html">
           <!-- Home Icon -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +128,7 @@
             />
           </svg>
         </a>
-        <a class="footer-link --home-bookmark" href="./bookmarks.html">
+        <a class="footer-link --bookmark" href="./bookmarks.html">
           <!-- Bokkmark Icon -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +145,7 @@
             <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
           </svg>
         </a>
-        <a class="footer-link --home-profile" href="./profile.html">
+        <a class="footer-link --bookmark-profile" href="./profile.html">
           <!-- Profile Icon -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
