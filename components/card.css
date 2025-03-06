@@ -20,13 +20,6 @@
   border-radius: 25px;
 }
 
-.card-bookmark {
-  position: absolute;
-  top: -15px;
-  left: 330px;
-  z-index: -1;
-}
-
 .card-elements {
   position: relative;
   display: flex;
@@ -66,4 +59,20 @@
   border: 2px;
   border-color: brown;
   border-style: groove;
+}
+.bookmark-btn {
+  position: absolute;
+  top: -20px;
+  left: 330px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookmark-btn:hover .card-bookmark {
+  stroke: blue;
 }
