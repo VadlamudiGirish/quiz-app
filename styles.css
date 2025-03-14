@@ -44,3 +44,7 @@ body {
 .--profile {
   background-color: var(--background-colcor);
 }
+
+.--form {
+  background-color: var(--background-colcor);
+}
