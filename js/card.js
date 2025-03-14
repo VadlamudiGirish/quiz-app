@@ -39,7 +39,7 @@ export function createCard(bookmarked, question, answer, buttonText, cardTag) {
   <div class="card-elements">
     <div class="card-question">${question}</div>
     <div hidden class="card-answer" js-data="answer">${answer}</div>
-    <button class="card-button" js-data="card-button">${buttonText}</button>
+    <button  js-data="card-button">${buttonText}</button>
     <div class="card-tags">
       <div class="card-tag">${cardTag}</div>
     </div>
