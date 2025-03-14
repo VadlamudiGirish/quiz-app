@@ -1,68 +1,40 @@
 import { createCard } from "./card.js";
 
-const checkedBookMarkSVG = `
-<svg
-    class="card-bookmark"
-    xmlns="http://www.w3.org/2000/svg"
-    width="40"
-    height="40"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="lucide lucide-bookmark"
->
-    <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
-    <path d="m9 10 2 2 4-4" />
-</svg>
-`;
-
-const unCheckedBookMarkSVG = `
-<svg
-    class="card-bookmark"
-    xmlns="http://www.w3.org/2000/svg"
-    width="40"
-    height="40"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="lucide lucide-bookmark"
->
-    <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-</svg>
-`;
-
+let isBookmarked = false;
 const question = "What does HTML stand for?";
 const answer = "Hyper Text Markup Language";
-const buttonText = "Show answer";
+const showText = "Show answer";
+const hideText = "Hide answer";
 const cardTag = "#html";
-
-const bookmarkedCard = createCard(
-  checkedBookMarkSVG,
-  question,
-  answer,
-  buttonText,
-  cardTag
-);
-
-const card = createCard(
-  unCheckedBookMarkSVG,
-  question,
-  answer,
-  buttonText,
-  cardTag
-);
 
 const cardSection = document.querySelector("[js-data = 'card-section']");
 
-cardSection.insertAdjacentHTML("beforeend", bookmarkedCard);
-cardSection.insertAdjacentHTML("beforeend", card);
-cardSection.insertAdjacentHTML("beforeend", card);
-cardSection.insertAdjacentHTML("beforeend", bookmarkedCard);
+const renderCard = () => {
+  cardSection.innerHTML = "";
+  const cardHTML = createCard(
+    isBookmarked,
+    question,
+    answer,
+    showText,
+    cardTag
+  );
 
-console.log(card);
+  cardSection.insertAdjacentHTML("beforeend", cardHTML);
+
+  const bookmarkButton = document.querySelector("[js-data='bookmark-button']");
+
+  const cardButton = document.querySelector("[js-data='card-button']");
+  const answerElement = document.querySelector("[js-data='answer']");
+
+  cardButton.addEventListener("click", () => {
+    answerElement.hidden = !answerElement.hidden;
+    cardButton.textContent = answerElement.hidden ? showText : hideText;
+  });
+
+  bookmarkButton.addEventListener("click", () => {
+    isBookmarked = !isBookmarked;
+    renderCard();
+  });
+};
+
+renderCard();
