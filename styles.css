@@ -1,6 +1,7 @@
 @import "./components/header.css";
 @import "./components/footer.css";
 @import "./components/card.css";
+@import "./components/form.css";
 
 * {
   margin: 0;
@@ -11,7 +12,7 @@
 :root {
   --max-width: 428px;
   --color-cherry: rgb(185, 0, 0);
-  --background-colcor: gray;
+  --background-color: lightgray;
   --text-color: black;
 }
 
@@ -36,11 +37,41 @@ body {
 }
 
 .--home {
-  background-color: var(--background-colcor);
+  background-color: var(--background-color);
 }
 .--bookmark {
-  background-color: var(--background-colcor);
+  background-color: var(--background-color);
 }
 .--profile {
-  background-color: var(--background-colcor);
+  background-color: var(--background-color);
+}
+
+.--form {
+  background-color: var(--background-color);
+}
+
+.card-bookmark {
+  width: 40px; /* set desired width */
+  height: 40px; /* set desired height */
+}
+
+/* Responsive footer styles */
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-cherry);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  z-index: 2;
+}
+
+/* Ensure footer SVGs scale appropriately */
+.footer-link svg {
+  width: 55%; /* adjust as needed */
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }

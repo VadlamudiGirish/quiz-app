@@ -31,7 +31,7 @@
 
 .card-tags {
   position: absolute;
-  top: 140px;
+  top: 130px;
   left: 0;
   display: flex;
   flex-direction: row;
@@ -39,7 +39,7 @@
 }
 
 .card-tag {
-  font-size: 1.15vw;
+  font-size: 2.5vh;
   background-color: lightgray;
   border-radius: 5px;
   border: 0.25px;
@@ -53,18 +53,10 @@
   color: var(--text-color);
 }
 
-.card-button {
-  border-radius: 15%;
-  width: 6rem;
-  height: 2rem;
-  border: 2px;
-  border-color: brown;
-  border-style: groove;
-}
 .bookmark-btn {
   position: absolute;
-  top: -20px;
-  left: 330px;
+  top: -35px;
+  left: 290px;
   background: none;
   border: none;
   cursor: pointer;
