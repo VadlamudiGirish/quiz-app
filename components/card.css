@@ -1,62 +1,93 @@
 .card-section {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  width: 100%;
+  align-items: center;
   gap: 2vh;
+  margin: 10vh 0;
+  width: 100%;
 }
 
+/* Increase top padding to accommodate the bookmark button */
 .card {
   position: relative;
   width: 90%;
-  height: 200px;
+  min-height: 200px;
+  padding: 3rem 1.5rem 1.5rem 1.5rem; /* top padding increased to 3rem */
   font-size: 1.5rem;
+  background-color: #fff;
   box-shadow: 3px 4px 1px 1px var(--color-cherry);
-  border: 1px;
-  border-color: var(--color-cherry);
-  border-style: solid;
+  border: 1px solid var(--color-cherry);
   border-radius: 25px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .card-elements {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2vw;
-  gap: 25px;
+  gap: 1rem;
+  text-align: center;
+  width: 100%;
+  white-space: normal;
 }
 
-.card-tags {
-  position: absolute;
-  top: 130px;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+/* Ensure long words or sentences in question/answer wrap within the card */
+.card-question,
+.card-answer {
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  margin: 0.5rem 0;
 }
 
-.card-tag {
-  font-size: 2.5vh;
-  background-color: lightgray;
-  border-radius: 5px;
-  border: 0.25px;
-  border-color: var(--text-color);
-  border-style: dotted;
-}
-
-.card-question {
-  font-size: large;
-  font-style: italic;
+.card-answer {
+  font-size: 1rem;
   color: var(--text-color);
 }
 
+/* Adjust button text by reducing font-size and ensuring a minimum width */
+.card-button {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--color-cherry);
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 0.8rem; /* smaller font size */
+  min-width: 150px; /* wider button */
+  white-space: normal;
+}
+
+.card-button:hover {
+  background-color: var(--color-cherry);
+  color: #fff;
+}
+
+/* Place the tag container at the bottom-left without overlapping */
+.card-tags {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card-tag {
+  font-size: 0.9rem;
+  background-color: lightgray;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  border: 0.25px dotted var(--text-color);
+}
+
+/* Position the bookmark button in the top-right */
 .bookmark-btn {
   position: absolute;
-  top: -35px;
-  left: 290px;
+  top: -25px;
+  right: -20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -64,8 +95,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.bookmark-btn:hover {
+  transform: scale(1.1);
 }
 
 .bookmark-btn:hover .card-bookmark {
   stroke: blue;
+}
+
+/* Control SVG dimensions */
+.card-bookmark {
+  width: 40px;
+  height: 40px;
 }

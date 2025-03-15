@@ -1,40 +1,60 @@
 import { createCard } from "./card.js";
 
-let isBookmarked = true;
-const question = "What does HTML stand for?";
-const answer = "Hyper Text Markup Language";
 const showText = "Show answer";
 const hideText = "Hide answer";
-const cardTag = "#html";
 
-const cardSection = document.querySelector("[js-data = 'card-section']");
+const cardsData = [
+  {
+    isBookmarked: true,
+    question: "What does HTML stand for?",
+    answer: "Hyper Text Markup Language",
+    cardTag: "html",
+  },
+  {
+    isBookmarked: true,
+    question: "What does CSS stand for?",
+    answer: "Cascading Style Sheets",
+    cardTag: "css",
+  },
+];
 
-const renderCard = () => {
-  cardSection.innerHTML = "";
-  const cardHTML = createCard(
-    isBookmarked,
-    question,
-    answer,
-    showText,
-    cardTag
-  );
+const cardSection = document.querySelector("[js-data='card-section']");
 
-  cardSection.insertAdjacentHTML("beforeend", cardHTML);
+const renderCards = () => {
+  cardSection.innerHTML = ""; // Clear previous cards
 
-  const bookmarkButton = document.querySelector("[js-data='bookmark-button']");
+  cardsData.forEach((card, index) => {
+    const cardHTML = createCard(
+      card.isBookmarked,
+      card.question,
+      card.answer,
+      showText,
+      card.cardTag
+    );
 
-  const cardButton = document.querySelector("[js-data='card-button']");
-  const answerElement = document.querySelector("[js-data='answer']");
-
-  cardButton.addEventListener("click", () => {
-    answerElement.hidden = !answerElement.hidden;
-    cardButton.textContent = answerElement.hidden ? showText : hideText;
+    cardSection.insertAdjacentHTML("beforeend", cardHTML);
   });
 
-  bookmarkButton.addEventListener("click", () => {
-    isBookmarked = !isBookmarked;
-    renderCard();
-  });
+  // Add event listeners for all rendered cards
+  document
+    .querySelectorAll("[js-data='card-button']")
+    .forEach((button, index) => {
+      button.addEventListener("click", () => {
+        const answerElement =
+          document.querySelectorAll("[js-data='answer']")[index];
+        answerElement.hidden = !answerElement.hidden;
+        button.textContent = answerElement.hidden ? showText : hideText;
+      });
+    });
+
+  document
+    .querySelectorAll("[js-data='bookmark-button']")
+    .forEach((button, index) => {
+      button.addEventListener("click", () => {
+        cardsData[index].isBookmarked = !cardsData[index].isBookmarked;
+        renderCards(); // Re-render to reflect bookmark changes
+      });
+    });
 };
 
-renderCard();
+renderCards();

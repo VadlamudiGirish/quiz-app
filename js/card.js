@@ -9,8 +9,8 @@ const checkedBookMarkSVG = `
   stroke-linecap="round"
   stroke-linejoin="round"
 >
-    <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
-    <path d="m9 10 2 2 4-4" />
+  <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
+  <path d="m9 10 2 2 4-4" />
 </svg>
 `;
 
@@ -25,11 +25,17 @@ const unCheckedBookMarkSVG = `
   stroke-linecap="round"
   stroke-linejoin="round"
 >
-    <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+  <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
 </svg>
 `;
 
-export function createCard(bookmarked, question, answer, buttonText, cardTag) {
+export function createCard(
+  bookmarked = false,
+  question,
+  answer,
+  buttonText,
+  cardTag
+) {
   const svg = bookmarked ? checkedBookMarkSVG : unCheckedBookMarkSVG;
   return `
 <article class="card">
@@ -39,10 +45,10 @@ export function createCard(bookmarked, question, answer, buttonText, cardTag) {
   <div class="card-elements">
     <div class="card-question">${question}</div>
     <div hidden class="card-answer" js-data="answer">${answer}</div>
-    <button  js-data="card-button">${buttonText}</button>
-    <div class="card-tags">
-      <div class="card-tag">${cardTag}</div>
-    </div>
+    <button class="card-button" js-data="card-button">${buttonText}</button>
+  </div>
+  <div class="card-tags">
+    <div class="card-tag">#${cardTag}</div>
   </div>
 </article>
 `;

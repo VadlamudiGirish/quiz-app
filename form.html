@@ -17,19 +17,38 @@
     </header>
     <main class="main-content">
       <section class="form-section">
-        <form>
+        <form js-data="form-element">
           <fieldset>
             <legend>Create quiz card</legend>
             <label for="question">Your question:</label>
-            <input type="text" name="question" id="question" />
+            <textarea
+              type="text"
+              name="question"
+              id="question"
+              rows="20"
+              cols="50"
+              maxlength="150"
+              placeholder="Please provide question for card"
+            ></textarea>
+
             <label for="answer">Your answer:</label>
-            <input type="text" name="answer" id="answer" />
+            <textarea
+              type="text"
+              name="answer"
+              id="answer"
+              rows="20"
+              cols="50"
+              maxlength="150"
+              placeholder="Please provide answer for card"
+            ></textarea>
+
             <label for="tag">Tag:</label>
-            <input type="text" name="tag" id="tag" />
+            <input type="text" name="tag" id="tag" maxlength="10" />
           </fieldset>
           <button type="submit">Submit</button>
         </form>
       </section>
+      <section class="card-section" js-data="card-section"></section>
     </main>
     <footer class="main-footer">
       <nav class="footer-nav">

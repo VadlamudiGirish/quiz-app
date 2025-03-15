@@ -3,9 +3,17 @@
   align-items: center;
   flex-direction: column;
   margin-top: 10vh;
-  margin-bottom: 10vh;
+
   width: 100%;
   gap: 4vh;
+}
+
+.char-count {
+  text-align: right;
+  color: #666;
+  font-size: 0.8em;
+  margin-right: 1vw;
+  margin-bottom: 1vh;
 }
 
 button {
@@ -34,18 +42,18 @@ fieldset {
   width: 95%;
   gap: 1vh;
 }
-
+textarea {
+  width: 90%;
+  height: 4vh;
+  margin-left: 2vh;
+}
 input {
-  width: 80%;
+  width: 60%;
   height: 4vh;
   margin-left: 2vh;
 }
 label {
   margin-left: 2vh;
-}
-
-#tag {
-  margin-bottom: 5vh;
 }
 
 legend {
