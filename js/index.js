@@ -8,19 +8,19 @@ const cardsData = [
     isBookmarked: false,
     question: "What does HTML stand for?",
     answer: "Hyper Text Markup Language",
-    cardTag: "#html",
+    cardTag: "html",
   },
   {
     isBookmarked: false,
     question: "What does CSS stand for?",
     answer: "Cascading Style Sheets",
-    cardTag: "#css",
+    cardTag: "css",
   },
   {
     isBookmarked: false,
     question: "What does JS stand for?",
     answer: "JavaScript",
-    cardTag: "#js",
+    cardTag: "js",
   },
 ];
 

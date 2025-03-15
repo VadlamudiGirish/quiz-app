@@ -29,7 +29,13 @@ const unCheckedBookMarkSVG = `
 </svg>
 `;
 
-export function createCard(bookmarked, question, answer, buttonText, cardTag) {
+export function createCard(
+  bookmarked = false,
+  question,
+  answer,
+  buttonText,
+  cardTag
+) {
   const svg = bookmarked ? checkedBookMarkSVG : unCheckedBookMarkSVG;
   return `
 <article class="card">
@@ -41,7 +47,7 @@ export function createCard(bookmarked, question, answer, buttonText, cardTag) {
     <div hidden class="card-answer" js-data="answer">${answer}</div>
     <button  js-data="card-button">${buttonText}</button>
     <div class="card-tags">
-      <div class="card-tag">${cardTag}</div>
+      <div class="card-tag">#${cardTag}</div>
     </div>
   </div>
 </article>
