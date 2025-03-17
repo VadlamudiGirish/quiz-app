@@ -36,20 +36,63 @@ export function createCard(
   buttonText,
   cardTag
 ) {
+  // Choose the proper SVG based on bookmarked state
   const svg = bookmarked ? checkedBookMarkSVG : unCheckedBookMarkSVG;
-  return `
-<article class="card">
-  <button class="bookmark-btn" aria-label="Bookmark" js-data="bookmark-button">
-    ${svg}
-  </button>
-  <div class="card-elements">
-    <div class="card-question">${question}</div>
-    <div hidden class="card-answer" js-data="answer">${answer}</div>
-    <button class="card-button" js-data="card-button">${buttonText}</button>
-  </div>
-  <div class="card-tags">
-    <div class="card-tag">#${cardTag}</div>
-  </div>
-</article>
-`;
+
+  // Create the main article element with class "card"
+  const article = document.createElement("article");
+  article.classList.add("card");
+
+  // Create the bookmark button and set its attributes
+  const bookmarkBtn = document.createElement("button");
+  bookmarkBtn.classList.add("bookmark-btn");
+  bookmarkBtn.setAttribute("aria-label", "Bookmark");
+  bookmarkBtn.setAttribute("js-data", "bookmark-button");
+  // Insert the SVG as innerHTML because it's an SVG string
+  bookmarkBtn.innerHTML = svg;
+  article.appendChild(bookmarkBtn);
+
+  // Create a container for the card elements
+  const cardElements = document.createElement("div");
+  cardElements.classList.add("card-elements");
+
+  // Create the question element
+  const cardQuestion = document.createElement("div");
+  cardQuestion.classList.add("card-question");
+  cardQuestion.textContent = question;
+  cardElements.appendChild(cardQuestion);
+
+  // Create the answer element, set it to hidden and add attributes
+  const cardAnswer = document.createElement("div");
+  cardAnswer.classList.add("card-answer");
+  cardAnswer.setAttribute("hidden", "");
+  cardAnswer.setAttribute("js-data", "answer");
+  cardAnswer.textContent = answer;
+  cardElements.appendChild(cardAnswer);
+
+  // Create the button element for the card and set its text
+  const cardButton = document.createElement("button");
+  cardButton.classList.add("card-button");
+  cardButton.setAttribute("js-data", "card-button");
+  cardButton.textContent = buttonText;
+  cardElements.appendChild(cardButton);
+
+  // Append the card elements container to the article
+  article.appendChild(cardElements);
+
+  // Create a container for the card tags
+  const cardTags = document.createElement("div");
+  cardTags.classList.add("card-tags");
+
+  // Create the individual tag element with the hash prefix
+  const cardTagEl = document.createElement("div");
+  cardTagEl.classList.add("card-tag");
+  cardTagEl.textContent = `#${cardTag}`;
+  cardTags.appendChild(cardTagEl);
+
+  // Append the tag container to the article
+  article.appendChild(cardTags);
+
+  // Return the complete card element
+  return article;
 }
