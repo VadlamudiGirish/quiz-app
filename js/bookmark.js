@@ -32,7 +32,7 @@ const renderCards = () => {
       card.cardTag
     );
 
-    cardSection.insertAdjacentHTML("beforeend", cardHTML);
+    cardSection.insertAdjacentElement("beforeend", cardHTML);
   });
 
   // Add event listeners for all rendered cards

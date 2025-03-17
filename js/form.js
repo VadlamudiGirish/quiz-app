@@ -43,7 +43,7 @@ function renderCards() {
       showText,
       data.tag
     );
-    cardSection.insertAdjacentHTML("beforeend", cardHTML);
+    cardSection.insertAdjacentElement("beforeend", cardHTML);
   });
 
   document
